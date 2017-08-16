@@ -12,10 +12,12 @@
 <script>
 	function addItem(){
 		var text=document.getElementById('objective').value;
-		var date = new Date();
-		setCookie('obj'+date.getTime(),encodeURIComponent(text));
-		addListItem('obj'+date.getTime(),text);
-		document.getElementById('objective').value='';
+		if(text.length>0){
+			var date = new Date();
+			setCookie('obj'+date.getTime(),encodeURIComponent(text));
+			addListItem('obj'+date.getTime(),text);
+			document.getElementById('objective').value='';
+		}
 	}
 	
 	function enter(e, input){

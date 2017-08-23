@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
+<meta charset='utf-8'>
 <title>To Do List</title>
 </head>
 <body bgcolor='cccccc' onload='checkForObjectives()'>
@@ -30,7 +32,7 @@
 	function setCookie(sName, sValue){
 		document.cookie = sName + '=' + escape(sValue);
 		var date = new Date();
-		date.setMonth(date.getMonth()+1);
+		date.setMonth(date.getYear()+1);
 		document.cookie += ('; expires=' + date.toUTCString()); 
 	}
 	
@@ -39,7 +41,6 @@
 	}
 	
 	function checkForObjectives(){
-		var str="";
 		var list=document.getElementById('list');
 		var cookies = document.cookie.split('; ');
 		cookies.sort();
